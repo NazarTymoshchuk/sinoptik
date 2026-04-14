@@ -53,7 +53,7 @@ async function sendRequest() {
     const LON = data.coord.lon
 
     // Other Cities
-
+// hello
     const API_REQUEST_COORD = `https://api.openweathermap.org/data/2.5/weather?lat=${LAT + 0.3}&lon=${LON - 0.3}&appid=${API_KEY}&units=metric&lang=ua`;
     const response_coord = await fetch(API_REQUEST_COORD)
     const data_coord = await response_coord.json()
