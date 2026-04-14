@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Weather Dashboard</title>
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<div class="container">
+
+<!-- Sidebar
+<div class="sidebar">
+    <div class="logo">☰</div>
+    <ul>
+        <li>🏠</li>
+        <li>📍</li>
+        <li>📅</li>
+        <li>🔔</li>
+        <li>⚙️</li>
+    </ul>
+</div> -->
+
+<!-- Main -->
+<div class="main">
+
+<header>
+                <div>
+                    <h3>Hi, Dima</h3>
+                    <h1>Good morning</h1>
+                </div>
+                <div class="options-container">
+                    <div class="search-container">
+                        <!-- SVG іконка пошуку -->
+                        <svg class="search-icon" fill="none" viewBox="0 0 24 24" stroke-width="2">
+                            <circle cx="11" cy="11" r="7"></circle>
+                            <line x1="16.65" y1="16.65" x2="21" y2="21"></line>
+                        </svg>
+
+                        <input 
+                            type="text" 
+                            class="search-input" 
+                            placeholder="Search your location"
+                        >
+                    </div>
+                    <div class="theme-toggle">
+                        <input type="checkbox" id="toggle">
+                        <label for="toggle" class="toggle-label">
+
+                            <!-- Sun Icon -->
+                            <svg class="icon sun" fill="none" viewBox="0 0 24 24" stroke-width="2">
+                            <circle cx="12" cy="12" r="5"/>
+                            <line x1="12" y1="1" x2="12" y2="3"/>
+                            <line x1="12" y1="21" x2="12" y2="23"/>
+                            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/>
+                            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/>
+                            <line x1="1" y1="12" x2="3" y2="12"/>
+                            <line x1="21" y1="12" x2="23" y2="12"/>
+                            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/>
+                            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/>
+                            </svg>
+
+                            <!-- Moon Icon -->
+                            <svg class="icon moon" fill="none" viewBox="0 0 24 24" stroke-width="2">
+                            <path d="M21 12.79A9 9 0 0111.21 3
+                                    7 7 0 1021 12.79z"/>
+                            </svg>
+
+                        </label>
+                    </div>
+                    <div>
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRCKnkcldvTLRKwVmiqfMYdxuK04cx_OiBQnQ&s" alt="">
+                    </div>
+                </div> 
+            </header>
+
+<div class="grid">
+
+<!-- Weather Card -->
+<div class="card weather">
+    <div>
+        <p id="main-city"></p>
+        <h2 id="date"></h2>
+    </div>
+
+    <div class="temp">
+        <h1 id="main-temp"></h1>
+        <p id="main-description"></p>
+    </div>
+</div>
+
+<!-- Highlight -->
+<div class="card highlight">
+
+<h3>Today's Highlight</h3>
+
+<div class="highlight-grid">
+
+<div class="mini">
+<p>Wind Status</p>
+<h2 id="wind-speed"></h2>
+</div>
+
+<div class="mini">
+<p>Humidity</p>
+<h2 id="humidity"></h2>
+</div>
+
+<div class="mini">
+<p>Pressure</p>
+<h2 id="pressure"></h2>
+</div>
+
+<div class="mini">
+<p>Visibility</p>
+<h2 id="visibility"></h2>
+</div>
+
+<div class="mini">
+<p>Sunrise</p>
+<h2 id="sunrise"></h2>
+</div>
+
+<div class="mini">
+<p>Sunset</p>
+<h2 id="sunset"></h2>
+</div>
+
+</div>
+
+</div>
+
+<!-- Countries -->
+<div class="card countries">
+
+<h3>Others Cities</h3>
+
+<div class="country">
+<span id="city-coord-name"></span>
+<span id="coord-temp"></span>
+</div>
+
+<div class="country">
+<span id="city-coord-name2">Tokyo</span>
+<span id="coord-temp2">30° / 19° 🌤</span>
+</div>
+
+</div>
+
+<!-- Forecast -->
+<div class="card forecast">
+
+<h3>10 Day Forecast</h3>
+
+<div class="forecast-grid">
+
+<div class="day">
+<p>Today</p>
+<span>🌧</span>
+<h3>28°</h3>
+</div>
+
+<div class="day">
+<p>Mon</p>
+<span>🌤</span>
+<h3>31°</h3>
+</div>
+
+<div class="day">
+<p>Tue</p>
+<span>🌧</span>
+<h3>27°</h3>
+</div>
+
+<div class="day">
+<p>Wed</p>
+<span>⛈</span>
+<h3>29°</h3>
+</div>
+
+<div class="day">
+<p>Thu</p>
+<span>☀️</span>
+<h3>32°</h3>
+</div>
+
+</div>
+
+</div>
+
+</div>
+</div>
+</div>
+
+<script src="main.js"></script>
+</body>
+</html>
