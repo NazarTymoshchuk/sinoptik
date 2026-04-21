@@ -1,6 +1,4 @@
 const API_KEY = "35fb68b7709beb3e39a474e03949e3cd"
-const API_REQUEST = `https://api.openweathermap.org/data/2.5/weather?q=Copenhagen&appid=${API_KEY}&units=metric&lang=ua`
-
 
 const mainTemp = document.querySelector("#main-temp")
 const mainDescription = document.querySelector("#main-description")
@@ -20,6 +18,10 @@ const coordCity2 = document.querySelector("#city-coord-name2")
 const coordTemp2 = document.querySelector("#coord-temp2")
 
 async function sendRequest() {
+    const city = document.querySelector("#search-input").value
+
+    const API_REQUEST = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${API_KEY}&units=metric&lang=ua`
+
     const response = await fetch(API_REQUEST)
     const data = await response.json()
     console.log(data);
