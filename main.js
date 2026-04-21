@@ -1,5 +1,5 @@
 const API_KEY = "35fb68b7709beb3e39a474e03949e3cd"
-const API_REQUEST = `https://api.openweathermap.org/data/2.5/weather?q=Rivne&appid=${API_KEY}&units=metric&lang=ua`
+const API_REQUEST = `https://api.openweathermap.org/data/2.5/weather?q=Copenhagen&appid=${API_KEY}&units=metric&lang=ua`
 
 
 const mainTemp = document.querySelector("#main-temp")
@@ -23,8 +23,6 @@ async function sendRequest() {
     const response = await fetch(API_REQUEST)
     const data = await response.json()
     console.log(data);
-
-    
 
     mainTemp.innerHTML = `${Math.round(data.main.temp)}°C`
     mainDescription.innerHTML = `${data.weather[0].main}`
@@ -53,7 +51,7 @@ async function sendRequest() {
     const LON = data.coord.lon
 
     // Other Cities
-// hello
+
     const API_REQUEST_COORD = `https://api.openweathermap.org/data/2.5/weather?lat=${LAT + 0.3}&lon=${LON - 0.3}&appid=${API_KEY}&units=metric&lang=ua`;
     const response_coord = await fetch(API_REQUEST_COORD)
     const data_coord = await response_coord.json()
@@ -84,6 +82,22 @@ function changeBackgroundImage(description)
     else if (description == "Clear")
     {
         body.style.backgroundImage = `url("./images/Sunny.png")`
+    }
+    else if (description == "Thunderstorm")
+    {
+        body.style.backgroundImage = `url("./images/Thunderstorm.png")`
+    }
+    else if (description == "Rain")
+    {
+        body.style.backgroundImage = `url("./images/Rain.png")`
+    }
+    else if (description == "Snow")
+    {
+        body.style.backgroundImage = `url("./images/Snow.png")`
+    }
+    else 
+    {
+        body.style.backgroundImage = `url("./images/Clouds.png")`
     }
 }
 
