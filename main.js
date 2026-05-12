@@ -71,6 +71,37 @@ async function sendRequest() {
     coordTemp2.innerHTML = `${Math.round(data_coord2.main.temp)}°C`
 
     changeBackgroundImage(data.weather[0].main)
+    sevenDayForecast(city)
+}
+
+async function sevenDayForecast(city) {
+    const API_REQUEST = `https://api.openweathermap.org/data/2.5/forecast?q=${city}&appid=${API_KEY}&units=metric&lang=ua`
+
+    const response = await fetch(API_REQUEST)
+    const data = await response.json()
+    console.log(data);
+
+    const days = {}
+
+    data.list.forEach(element => {
+        const date = element.dt_txt.split(' ')[0];
+
+        const temp = element.main.temp;
+
+        if(!days[date]) {
+            days[date] = {
+                min: temp,
+                max: temp
+            }
+        }
+        else {
+            days[date].min = Math.min(days[date].min, temp)
+            days[date].max = Math.max(days[date].max, temp)
+        }
+    });
+
+    console.log(days);
+    
 }
 
 const body = document.querySelector("body")
