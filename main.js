@@ -74,6 +74,7 @@ async function sendRequest() {
     sevenDayForecast(city)
 }
 
+const forecastCointainer = document.querySelector("#forecast-container")
 async function sevenDayForecast(city) {
     const API_REQUEST = `https://api.openweathermap.org/data/2.5/forecast?q=${city}&appid=${API_KEY}&units=metric&lang=ua`
 
@@ -102,6 +103,23 @@ async function sevenDayForecast(city) {
 
     console.log(days);
     
+    forecastCointainer.innerHTML = ""
+    for (const key in days)
+    {
+        forecastCointainer.innerHTML += `<div class="day">
+    <p class="day-name">${key}</p>
+
+    <div class="temps">
+        <h3 class="max-temp">
+            ☀ ${Math.round(days[key].max)}°
+        </h3>
+
+        <h3 class="min-temp">
+            ❄ ${Math.round(days[key].min)}°
+        </h3>
+    </div>
+</div>`
+    }
 }
 
 const body = document.querySelector("body")
